@@ -25,7 +25,7 @@ body {
 }
 
 header {
-    text-align: center; /* Center header content by default */
+    text-align: left; /* Center header content by default */
     margin-bottom: 20px;
 }
 
@@ -44,8 +44,7 @@ header {
 
 header h1 {
     padding-top: 0; /* Reset padding */
-    text-align: center; /* Ensure text is centered */
-    margin-top: 10px; /* Add some space below the image */
+    text-align: left; /* Ensure text is centered */
 }
 
 
@@ -87,23 +86,35 @@ footer {
     color: #777;
 }
 
+.head_container {
+    display: flex;
+    flex-direction: column; /* Default: Stacked vertically */
+    width: 100%;
+}
+
+.div1, .div2 {
+    padding: 20px;
+    box-sizing: border-box;
+    width: 100%; /* Full width by default */
+}
+
+.div2 {
+    margin-top: 10px; /* Margin for small screens (when stacked) */
+}
+  
 
 /* Media Query for Larger Screens (e.g., Tablets and Desktops) */
-@media (min-width: 600px) {
-    header {
-        text-align: left; /* Align header content to the left on larger screens */
+@media (min-width: 800px) {
+    .head_container {
+        flex-direction: row; /* Side-by-side */
+        justify-content: flex-start; /* Align to the left */
     }
-
-    .profile-pic {
-        float: left;      /* Float the image to the left on larger screens */
-        margin-right: 20px; /* Restore margin */
-        display: block; /* Keeps consistent display */
-        margin-left: 0;   /* Reset auto margins from mobile */
-        margin-right: 20px;
+    
+    .div1, .div2 {
+        width: auto;
     }
-
-    header h1{
-        padding-top: 100px;
-        text-align: left;
+    .div2{
+        margin-top:0; /* remove the margin on big screens */
+        margin-left: 20px; /* Add margin between divs on large screens */
     }
 }
