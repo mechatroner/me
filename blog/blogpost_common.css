@@ -22,6 +22,10 @@ body {
     padding-right: 20px; /* Space between post and navigation */
 }
 
+p {
+    text-indent: 30px;
+}
+
 .navigation {
     flex: 1; /* Takes up less space */
     padding-left: 20px;
